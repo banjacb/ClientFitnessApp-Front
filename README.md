@@ -1,3 +1,20 @@
+Prijava
+![image](https://github.com/user-attachments/assets/226f839f-908d-4be5-9e68-abae4f8f147f)
+
+Registracija
+![image](https://github.com/user-attachments/assets/1a1cd612-21ef-4f85-8a8a-fd9bc27db52c)
+
+Novosti
+![image](https://github.com/user-attachments/assets/2a144cb5-1dd3-42f3-9137-1c3cbefe8bb7)
+
+Vjezbe
+![image](https://github.com/user-attachments/assets/b73b2df0-df9e-414e-8bae-95d20681d213)
+
+Aktivnosti
+![image](https://github.com/user-attachments/assets/147d41ae-765c-4521-be00-e6c3c71459d8)
+
+
+
 # AppMy
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
