@@ -1,0 +1,34 @@
+.program-container{
+    
+    
+    
+    height: 100vh;
+    color: white;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   display: flex;
+   flex-direction: row;
+ 
+}
+.program-image {
+    max-width: 100%; 
+    height: auto; 
+    margin: auto; 
+    display: block; 
+}
+
+.footer {
+    display: flexbox;
+    margin-bottom: auto;
+  }
+
+  .scrolling-comments {
+    margin-top: 20px;
+    max-height: 500px; /* ograničava visinu */
+    overflow-y: auto; /* omogućava skrolanje po y osi */
+    overflow-x: hidden; /* sprječava skrolanje po x osi */
+    padding: 20px;
+}
+

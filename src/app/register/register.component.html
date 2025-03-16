@@ -1,0 +1,72 @@
+<div class="registration-container">
+    <div class="container h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-xs-12 col-md-5">
+                <div class="d-flex align-items-center justify-content-center gap-sm-3">
+                    <h1 class="text-center text-light fw-semibold" style="font-size: 48px;">Registracija</h1>
+                </div>
+
+                <div class="card mt-4 shadow-5 rounded-4" style="background-color: rgba(0, 0, 0, 0.5);"> 
+                    <div class="card-body p-md-5 py-md-4">
+                        <p class="text-secondary fw-semibold">Registracija novog naloga</p>
+                       
+                        <form [formGroup]="registrationForm" method="post" class="mt-4" (ngSubmit)="onSubmit()">
+                        
+                                <div class="mb-3">
+                                    <label for="usernameInput" class="text-secondary fw-semibold">Korisničko ime*</label>
+                                    <input formControlName="username" required type="text" class="form-control" id="usernameInput" placeholder="Unesite vaše korisničko ime" name="username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="passwordInput" class="text-secondary fw-semibold">Lozinka*</label>
+                                    <input formControlName="password" required type="password" class="form-control" id="passwordInput" placeholder="Unesite vašu lozinku" name="password">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="emailInput" class="text-secondary fw-semibold">Email adresa*</label>
+                                    <input formControlName="email" required type="email" class="form-control" id="emailInput" placeholder="Unesite vašu email adresu" name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="first_nameInput" class="text-secondary fw-semibold">Ime*</label>
+                                    <input formControlName="first_name"  required type="text" class="form-control" id="first_nameInput" placeholder="Unesite vaše ime" name="first_name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="last_nameInput" class="text-secondary fw-semibold">Prezime*</label>
+                                    <input formControlName="last_name" required type="text" class="form-control" id="last_nameInput" placeholder="Unesite vaše prezime" name="last_name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cityInput" class="text-secondary fw-semibold">Grad*</label>
+                                    <input formControlName="city" required type="text" class="form-control" id="cityInput" placeholder="Unesite vaš grad" name="city">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="roleInput" class="text-secondary fw-semibold">Tip korisnika</label>
+                                    <select formControlName="role" class="form-control" id="roleInput" name="role">
+                                        <option value="2" selected>Član fitnes centra</option>
+                                        <option value="1">Savetnik</option>
+                                    </select>
+                                </div> 
+                              
+                                    <div class="mb-3">
+                                      <label for="imageInput" class="form-label">Slika</label>
+                                      <input type="file" class="form-control" id="imageInput" formControlName="image" name="image" (change)="onFileUpload($event)" required>
+                                
+                                    </div>
+                                  
+
+                                
+                                <p style="color: white;"> {{errorMessage}}</p>            
+                         
+                            <div class="d-grid mt-4" style="width: fit-content; margin: 0 auto;">
+                                <button type="submit" class="btn btn-primary fs-5 d-flex align-items-center gap-3">Registruj se</button> 
+                            </div>                            
+                        </form>
+                        
+                        <hr class="hr" />
+                        <div class="d-flex w-100 justify-content-end text-secondary fw-semibold">
+                            Već imate nalog? &nbsp; <a routerLink="/app-login" routerLinkActive="active" class="link-opacity-100-hover">Prijavite se</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

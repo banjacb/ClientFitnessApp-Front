@@ -1,0 +1,45 @@
+<div class="login-container" >
+    <div class="container h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-xs-12 col-md-5">
+                <div class="d-flex align-items-center justify-content-center gap-sm-3">
+                    <h1 class="text-center text-light fw-semibold" style="font-size: 48px;">Fitnes centar</h1>
+                </div>
+
+                <div class="card mt-4 shadow-5 rounded-4" style="background-color: rgba(0, 0, 0, 0.5);"> 
+                    <div class="card-body p-md-5 py-md-4">
+                        <p class="text-secondary fw-semibold">Prijava na sistem</p>
+                       
+                        <form  [formGroup]="loginForm" method="post" class="mt-4" (ngSubmit)="onSubmit()" >
+                            <div class="mb-3">
+                                <label for="usernameInput" class="text-secondary fw-semibold">Korisnicko ime</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="addon-wrapping"> <img src="../../assets/username.png" alt="Ikona" width="40px" height="40px"></span>
+                                    <input formControlName="username" required type="text" class="form-control" id="usernameInput" placeholder="Unesite vaše korisničko ime" name="username">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="passwordInput" class="text-secondary fw-semibold">Lozinka</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="addon-wrapping"> <img src="../../assets/pass.png" alt="Ikona" width="40px" height="40px"></span>
+                                    <input formControlName="password" required type="password" class="form-control" id="passwordInput" placeholder="Unesite vašu lozinku" name="password">
+                                </div>
+                            </div>
+                            <div *ngIf="errorMessage" class="error-message" style="color: aliceblue;">
+                                {{ errorMessage }}
+                              </div>
+                              
+                            <div class="d-grid mt-4" style="width: fit-content; margin: 0 auto;">
+                                <button type="submit" class="btn btn-primary fs-5 d-flex align-items-center justify-content-center gap-3">Prijavi me</button> 
+                            </div>                            
+                        </form>
+                        <hr class="hr" />
+                        <div class="d-flex w-100 justify-content-end text-secondary fw-semibold">
+                          Nemate nalog? &nbsp; <a routerLink="/app-register" routerLinkActive="active" class="link-opacity-100-hover">Registruj se</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

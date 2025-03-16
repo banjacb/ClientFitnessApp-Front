@@ -1,0 +1,39 @@
+<div class="container-fluid ">
+  <div class="row ">
+    <div class="col-12 col-md-3 menu  bg-dark text-center">
+      <br>
+      <img src="../../assets/logo.jpg" style="height: 60px; margin: auto;" >
+      <h1 class="text-white text-center mt-3 ">Fitness app</h1><br><br>
+      
+      <ul class="list-unstyled mt-3 ">
+        <li><a routerLink="/app-homepage" aria-current="page" routerLinkActive="active" class="menu-link">Novosti</a></li>
+        <li><a routerLink="/app-exercises" routerLinkActive="active" class="menu-link">Vježbe</a></li>
+        <li><a routerLink="/app-programs" routerLinkActive="active" class="menu-link">Fitnes programi</a></li>
+        @if(!isLoggin)
+        {
+        <li><a  routerLink="/app-login" routerLinkActive="active"  class="menu-link ">Prijavi se</a></li>
+          
+        }
+       @if(isLoggin)
+       {
+        <li><a routerLink="/app-myprograms" routerLinkActive="active" class="menu-link">Moji fitnes programi</a></li>
+        <li><a routerLink="/app-messages" routerLinkActive="active" class="menu-link">Poruke</a></li>
+        <li><a routerLink="/app-myactivities" routerLinkActive="active" class="menu-link">Aktivnosti</a></li>
+        <li><a routerLink="/app-update-profile" routerLinkActive="active" class="menu-link">Uredi profil</a></li>
+      
+        <a routerLink="/app-login" routerLinkActive="active"  class="menu-link " (click)="logOut()">
+          Odjavi se
+        </a>
+       }
+    
+      </ul>
+  
+    </div>
+    <div class="col-12 col-md-9 content">
+      <router-outlet></router-outlet>
+  
+    </div>
+  </div>
+</div>
+  
+

@@ -1,0 +1,41 @@
+<div class="exercises-container">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <h3 class="fw-bold font-italic m-0 title">Vježbe</h3>   
+            <br><br>
+        </div>
+        <div class="container mt-4" style=" max-height: 700px; overflow-x: hidden;">
+            <div class="row">
+                <div class="col">
+            
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            @for(e of exercises; track $index)
+                            {
+                            <div class="col custom-card">
+                                <div class="card shadow transparent-background ">
+                                    <div class="card-header bg-light">
+                                        <h5 class="fw-bold m-0">{{ e.name }}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Opis</h6>
+                                        <p class="card-text">{{ e.instructions }}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fw-bold">Tip: {{ e.type }}</span><br>
+                                                <span class="fw-bold">Mišići: {{ e.muscle }}</span><br>
+                                                <span class="fw-bold">Oprema: {{ e.equipment }}</span><br>
+                                                <span class="fw-bold">Težina: {{ e.difficulty }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                            }
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

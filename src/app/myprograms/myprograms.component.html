@@ -1,0 +1,54 @@
+<div class="programs-container">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <h3 class="fw-bold font-italic m-0 text-center">Moji fitnes programi</h3>
+        </div><br>
+
+        <div class="d-flex justify-content-center">
+            <a  routerLink="/app-addprogram" routerLinkActive="active" class="btn btn-outline-primary">
+                <img src="../../assets/add.png" alt="Add" style="width: 20px; height: 20px;">
+                Dodaj novi program
+            </a>
+        </div>
+        
+        
+        
+        <div class="container mt-4" style="max-height: 700px; overflow-x: hidden;">
+            <div class="row">
+                <div class="col">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        @for(p of programs; track $index)
+                        {
+                        <div class="col custom-card">
+                            <div class="card shadow transparent-background">
+                                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                    <h5 class="fw-bold m-0 text-dark">{{ p.name }}</h5>
+                                    <div>
+                                      <ng-container *ngIf="p.status; else inactiveTemplate">
+                                        <button class="btn btn-success btn-sm ms-2" disabled>Aktivan</button>
+                                        <button class="btn btn-danger btn-sm ms-2" (click)="zavrsi(p)">Završi</button>
+                                      </ng-container>
+                                      <ng-template #inactiveTemplate>
+                                        <button class="btn btn-danger btn-sm ms-2" disabled>Završeno</button>
+                                      </ng-template>
+                                    </div>
+                                  </div>
+                                  
+                                <div class="card-body">
+                                    <a [routerLink]="['/app-program', p.id]" routerLinkActive="active">
+                                        <img class="img-class justify-content-end d-flex program-image"  src="{{getImage(p.image_id)}}" id="photo-id"/>
+                                    </a>
+                                   
+                                    
+                
+                                </div>
+                                
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

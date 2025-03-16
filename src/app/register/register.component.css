@@ -1,0 +1,10 @@
+.registration-container{
+   
+    height: 100vh;
+    color: white;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   background-image: url('../../assets/weights.jpg');
+}

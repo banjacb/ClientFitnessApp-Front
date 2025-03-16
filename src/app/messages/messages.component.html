@@ -1,0 +1,85 @@
+<div class="messages-container">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <h3 class="fw-bold font-italic m-0 text-center">Poruke</h3>
+        </div>
+
+        
+       
+        <form [formGroup]="myForm" method="post" (ngSubmit)="submitForm()" class="mt-4">
+         
+          <div class="col-md-12 ">
+              
+                <label for="text_messageInput" class="text-white fw-semibold">&nbsp;</label>
+                <input type="text" id="text_messageInput" formControlName="text_message" name="text_message" class="form-control" placeholder="Unesite poruku" required>
+          </div>
+
+
+                <div class="col-lg-3 col-md-6 mb-3">
+                 
+                    <label for="receiver_idInput" class="form-label text-white">&nbsp;</label>
+                    <select class="form-select" id="receiver_idInput" name="receiver_id" formControlName="receiver_id" required #receiverSelect (change)="onUserChange($event)">
+                      <option value="">odaberi</option>
+                      <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+              
+
+                    </select>
+                    <br>
+                 
+                    <div class="col-md-12 ">
+                      <button type="submit" class="btn btn-outline-primary">
+                        <img src="../../assets/newmess.png" alt="Add" style="width: 20px; height: 20px;">
+                        Pošalji poruku
+                      </button>
+                    </div>
+                </div>
+
+               
+
+          
+
+
+
+            
+          </form>
+      
+        
+        
+        
+            
+          <div class="row mt-4">
+            <div class="container mt-4" style="max-height: 500px; overflow-y: auto;">
+                @for(m of messages; track $index)
+                {
+                    <div class="border p-3 mb-3 transparent-background col-12">
+                        
+                        <div class="text-dark" >
+                            @if(m.receiver_id==this.idUser){
+                                <span >od:</span>
+                                {{ m.name_sender}} {{ m.surname_sender }}
+                                
+                                }
+                                @if(m.sender_id==this.idUser) {
+                                    <span >za:</span>
+                                    {{ m.name_receiver }} {{ m.surname_receiver }}
+                                    
+                                    
+                                }  
+                        </div>
+        
+                        <div class="fw-bold "> {{ m.text_message }} </div>
+                        {{m.date}} 
+                    </div>                
+                }
+            </div>
+        </div>
+        
+
+        
+
+
+
+
+
+    </div>
+</div>

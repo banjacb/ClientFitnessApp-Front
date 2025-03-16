@@ -1,0 +1,21 @@
+.exercises-container{
+    
+    
+     color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  
+ }
+ .transparent-background {
+     background-color: rgba(255, 255, 255, 0.5); 
+     color: rgb(11, 11, 11); 
+ }
+ 
+ .gray-background {
+     background-color: rgba(255, 255, 255, 0.5);
+     color: black;
+     border: #575757;
+     
+ }

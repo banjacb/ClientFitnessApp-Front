@@ -1,0 +1,22 @@
+.login-container{
+   
+    height: 100vh;
+    color: white;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   background-image: url('../../assets/weights.jpg');
+}
+
+
+.navbar {
+    margin-bottom: 0; /* Uklanja defaultni razmak između navigacionog bara i ostalog sadržaja */
+  }
+  .image-container {
+    padding: 0;
+    margin: 0;
+  }
+  .full-width-image {
+    width: 100%;
+  }

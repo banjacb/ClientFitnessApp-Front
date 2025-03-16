@@ -1,0 +1,16 @@
+.programs-container{
+    
+    
+    color: white;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+ 
+}
+
+.program-image {
+    width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+}

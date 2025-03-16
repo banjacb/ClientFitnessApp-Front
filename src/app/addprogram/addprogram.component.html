@@ -1,0 +1,93 @@
+<div class="programs-container">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <h3 class="fw-bold font-italic m-0 title">Dodajte novi program</h3>
+      </div>
+  
+      <form [formGroup]="programForm" (ngSubmit)="submitForm()" class="mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="name" class="form-label">Naziv programa</label>
+              <input type="text" class="form-control" id="name" formControlName="name" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="price" class="form-label">Cijena</label>
+              <input type="number" class="form-control" id="price" formControlName="price" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="duration" class="form-label">Trajanje programa</label>
+              <input type="number" class="form-control" id="duration" formControlName="duration" required placeholder="Unesite u danima">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="difficulty" class="form-label">Težina (kategorija)</label>
+              <input type="text" class="form-control" id="difficulty" formControlName="difficulty" required placeholder="(Pocetnike, profesionalce i slicno)">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="image" class="form-label">Slika</label>
+              <input type="file" class="form-control" id="image" formControlName="image" (change)="onFileUpload($event)" required>
+        
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="category_id" class="form-label">Kategorija</label>
+                  <select class="form-select" id="category_id" name="category_id" formControlName="category_id" required>
+                    <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+                  </select>
+                </div>
+              </div>
+              
+         
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="description" class="form-label">Opis</label>
+              <textarea class="form-control" id="description" formControlName="description" required></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="location" class="form-label">Lokacija</label>
+                <select class="form-select" id="location" formControlName="location" required (change)="toggleYouTubeLink($event)">
+                  <option value="naziv">Teretana</option>
+                  <option value="online">Online</option>
+                </select>
+                
+              </div>
+              
+              <div *ngIf="showYouTubeLink" class="mb-3">
+                <label for="youtubeLink" class="form-label">Link za vjezbe</label>
+                <input type="text" class="form-control" id="youtubeLink" formControlName="youtubeLink">
+              </div>
+              
+          </div>
+          <div *ngIf="message" class="error-message" style="color: aliceblue;">
+            {{ message }}
+          </div>
+  
+        <div class="d-grid mt-4 col-md-6 justify-content-center text-center">
+          <button type="submit" class="btn btn-primary">Dodaj program</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
